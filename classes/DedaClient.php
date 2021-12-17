@@ -8,6 +8,8 @@ use function GuzzleHttp\json_decode;
 
 class DedaClient implements DedaClientInterface
 {
+    const TEST_BASE_URL = 'https://authtest.soluzionipa.it/spid';
+
     /**
      * @var HttpClientInterface
      */
@@ -80,15 +82,16 @@ class DedaClient implements DedaClientInterface
 
     public function checkAssertion($assertion)
     {
-        $assertionSample = '{
+        if ($this->baseUrl == self::TEST_BASE_URL) {
+            $assertionSample = '{
     "esito": "ok",
     "provider_id": "infocert", 
     "attributi_utente": {
         "spidCode": "INF___",
-        "name": "Fabiano",
-        "familyName": "Pavan",
-        "fiscalNumber": "TINIT-PVNFBN___",
-        "email": "fabianopavan___",
+        "name": "Pinco",
+        "familyName": "Pallino",
+        "fiscalNumber": "TINIT-PNCPLN80A01H501P",
+        "email": "pinco@pallino.it",
         "gender": "M",
         "dateOfBirth": "1984-11-09",
         "placeOfBirth": "C383",
@@ -113,7 +116,8 @@ class DedaClient implements DedaClientInterface
     }
 }';
 
-        return json_decode($assertionSample, true);
+            return json_decode($assertionSample, true);
+        }
 
         $response = $this->httpClient->request(
             'POST',

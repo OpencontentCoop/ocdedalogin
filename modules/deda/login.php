@@ -5,7 +5,12 @@ $Module = $Params['Module'];
 $idp = $Params['IDP'];
 
 if (empty($idp)){
-    // load login template
+
+    $tpl = eZTemplate::factory();
+    echo $tpl->fetch('design:deda/login.tpl');
+    eZDisplayDebug();
+    eZExecution::cleanExit();
+
 }else{
     try {
         $client = DedaClientFactory::instance()->makeClient();

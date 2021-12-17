@@ -1,0 +1,21 @@
+{
+    "name": "opencontent/ocdedalogin-ls",
+    "description": "OpenContent OpenApi extension",
+    "type": "ezpublish-legacy-extension",
+    "authors": [        
+        {
+            "name": "OpenContent",
+            "homepage": "http://www.opencontent.it"
+        }
+    ],
+    "license": "GPL-2.0",    
+    "minimum-stability": "dev",
+    "require": {
+        "ezsystems/ezpublish-legacy-installer": "*",
+        "symfony/http-client": "5.*",
+        "lcobucci/jwt": "3.*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ocdedalogin"
+    }
+}

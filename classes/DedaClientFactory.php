@@ -22,14 +22,14 @@ class DedaClientFactory
     }
 
     /**
-     * @return DedaClientInterface
+     * @return DedaClient
      */
     public function makeClient()
     {
         if ($this->client === null) {
             $client = HttpClient::create();
             $settings = eZINI::instance('dedalogin.ini')->group('Settings');
-            $this->client = new DedaClient($client, $settings['ClientId'], $settings['BaseUrl'], $settings['ClientId'], $settings['ClientId']);
+            $this->client = new DedaClient($client, $settings['BaseUrl'], $settings['ClientId'], $settings['Secret'], $settings['Issuer']);
         }
 
         return $this->client;

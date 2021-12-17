@@ -6,7 +6,7 @@ $ViewList = array();
 $ViewList['login'] = array(
     'functions' => array('login'),
     'script' => 'login.php',
-    'params' => array(),
+    'params' => array('IDP'),
     'unordered_params' => array()
 );
 $ViewList['logout'] = array(
