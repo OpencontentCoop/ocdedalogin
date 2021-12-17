@@ -1,6 +1,6 @@
 {
     "name": "opencontent/ocdedalogin-ls",
-    "description": "OpenContent OpenApi extension",
+    "description": "OpenContent DedaLogin extension",
     "type": "ezpublish-legacy-extension",
     "authors": [        
         {
