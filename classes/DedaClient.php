@@ -125,7 +125,7 @@ class DedaClient implements DedaClientInterface
             [
                 'json' => [
                     'client_id' => $this->clientId,
-                    'assertion' => base64_encode($assertion)
+                    'assertion' => $assertion
                 ],
                 'auth_bearer' => $this->getAuthBearer(),
             ]
